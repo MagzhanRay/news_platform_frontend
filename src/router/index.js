@@ -3,6 +3,8 @@ import HomeView from "../views/HomeView.vue";
 import NewView from "../views/News/View.vue";
 import NewsCreate from "../views/News/Create.vue";
 import NewsEdit from "../views/News/Edit.vue";
+import CategoryCreate from "../views/Category/CreateView.vue";
+import CategoryEdit from "../views/Category/EditView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,12 +15,12 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/about",
-      name: "about",
+      path: "/category",
+      name: "category",
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AboutView.vue"),
+      component: () => import("../views/Category/CategoryView.vue"),
     },
     {
       path: "/news",
@@ -34,6 +36,16 @@ const router = createRouter({
       path: "/news/:id/edit",
       name: "newsEdit",
       component: NewsEdit,
+    },
+    {
+      path: "/category/create",
+      name: "categoryCreate",
+      component: CategoryCreate,
+    },
+    {
+      path: "/category/:id/edit",
+      name: "categoryEdit",
+      component: CategoryEdit,
     },
   ],
 });
